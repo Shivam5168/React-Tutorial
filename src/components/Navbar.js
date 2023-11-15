@@ -1,8 +1,8 @@
 
 import '../components/Navbar.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 const Navbar = () => {
 
   const [click, setClick] = useState(false);
@@ -16,6 +16,18 @@ const Navbar = () => {
       setColor(false);
     }
   };
+  const [theme, setTheme] = useState("dark-theme");
+  const toggleTheme = () => {
+    if(theme === "light-theme"){
+      setTheme('dark-theme')
+    }else{
+      setTheme('light-theme')
+    }
+  }
+useEffect(() => {
+  document.body.className = theme;
+}, [theme]);
+
 
   window.addEventListener("scroll", changeColor);
   return (
@@ -28,6 +40,9 @@ const Navbar = () => {
         <li><Link to="/Project">Project</Link></li>
         <li><Link to="/About">About</Link></li>
         <li><Link to="/Contact">Contact</Link></li>
+        <li onClick={toggleTheme}>
+        {theme === 'dark-theme' ? <FaSun size={20} style={{ color: "#fff" }} /> : <FaMoon size={20} style={{ color: "#000" }} />}
+      </li>
       </ul>
       <div className='hamburger' onClick={handleClick}>
         {click ? (<FaTimes size={20} style={{ color: "#fff" }} />) : ( <FaBars size={20} style={{ color: "#fff" }} /> )}

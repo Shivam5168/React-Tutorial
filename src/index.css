@@ -11,8 +11,22 @@ body{
   background: #000;
 }
 
-h1, h4, p, a{
-  color: #fff;
+
+
+
+.dark-theme h1,
+.dark-theme h4,
+.dark-theme p,
+.dark-theme a {
+  color: #fff; /* Text color for dark theme */
+  text-decoration: none; /* Text decoration for dark theme */
+}
+
+.light-theme h1,
+.light-theme h4,
+.light-theme p,
+.light-theme a{
+  color: #000;
   text-decoration: none;
 }
 
@@ -20,24 +34,57 @@ ul{
   list-style-type: none;
 }
 
-.btn{
+.dark-theme .btn{
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
-  background : rgb(248, 217, 15);
+  background : rgb(15, 221, 248);
   color: #222;
   border: 1px solid #fff;
   font-weight: 600;
   cursor: pointer;
 }
 
-.btn-light{
+.dark-theme .btn-light{
   background: transparent;
   color: #fff;
 }
 
-.btn:hover{
+.light-theme .btn{
+  padding: 12px 32px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background : rgb(15, 248, 236);
+  color: #222;
+  border: 1px solid #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.light-theme .btn-light{
+  background: black;
+  color: #ffffff;
+}
+
+
+.dark-theme label{
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.light-theme label{
+  color: #000000;
+  font-weight: 500;
+  font-size: 20px;
+}
+.dark-theme .btn:hover{
   background: rgba(255, 255, 255, 0.2);
   color : #fff;
+  transition: 0.3s;
+}
+.light-theme .btn:hover{
+  background: rgba(10, 10, 10, 0.274);
+  color : #ffffff;
   transition: 0.3s;
 }

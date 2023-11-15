@@ -11,7 +11,7 @@
     object-fit: cover;
 }
 
-.mask::after{
+.dark-theme .mask::after{
     content: "";
     width: 100%;
     height: 100%;
@@ -19,6 +19,17 @@
     top: 0;
     left: 0;
     background-color: #000;
+    opacity: 0.8;
+}
+
+.light-theme .mask::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffffa8;
     opacity: 0.8;
 }
 
